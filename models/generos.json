@@ -1,0 +1,38 @@
+[ 
+  {
+    "id": 28,
+    "nombre": "Acción",
+    "valor": "accion",
+    "imagen": "/ProyectoSemestral/assets/img/genero_accion.jpg"
+  },
+  {
+    "id": 35,
+    "nombre": "Comedia",
+    "valor": "comedia",
+    "imagen": "/ProyectoSemestral/assets/img/genero_comedia.jpg"
+  },
+  {
+    "id": 18,
+    "nombre": "Drama",
+    "valor": "drama",
+    "imagen": "/ProyectoSemestral/assets/img/genero_drama.jpg"
+  },
+  {
+    "id": 27,
+    "nombre": "Terror",
+    "valor": "terror",
+    "imagen": "/ProyectoSemestral/assets/img/genero_terror.jpg"
+  },
+  {
+    "id": 14,
+    "nombre": "Fantasía",
+    "valor": "fantasia",
+    "imagen": "/ProyectoSemestral/assets/img/genero_fantasia.jpg"
+  },
+  {
+    "id": 878,
+    "nombre": "Ciencia ficción",
+    "valor": "ciencia_ficcion",
+    "imagen": "/ProyectoSemestral/assets/img/genero_cienciaficcion.jpg"
+  }
+]
