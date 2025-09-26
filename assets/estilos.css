@@ -149,27 +149,28 @@ body.tema-oscuro .seccion-nuevos::after {
 }
 
 /* ========== CARDS DE PELÍCULAS Y GÉNEROS ========== */
+
+/* Unificada: Card base */
 .card {
-  flex: 0 0 160px;
-  max-width: 160px;
-  min-width: 140px;
-  border-radius: 12px;
+  flex: 0 0 180px;
+  max-width: 180px;
+  min-width: 160px;
+  border-radius: 10px;
   overflow: hidden;
   background: #ffffff;
-  box-shadow: none; /* ← Aquí eliminamos la sombra */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.3s ease;
+  align-items: flex-start; /* Alineado a la izquierda */
+  text-align: left;
   cursor: pointer;
   padding: 8px;
   gap: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  /* box-shadow: none; ← Opcional si quieres hover sin sombra */
+  box-shadow: 0 8px 20px white;
 }
 
 
@@ -184,19 +185,24 @@ body.tema-oscuro .seccion-nuevos::after {
   background-color: #f0f0f0;
 }
 
+
+/* Títulos de las películas */
 .card h4 {
-  font-size: 0.2rem;
-  font-weight: 400;
-  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem;
   color: #23283a;
+  margin: 0;
 }
 
+
 .card p {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color: #555;
+  padding: 0 0.5rem 1rem;
   margin: 0;
-  padding: 0 4px 8px;
 }
+
 
 body.tema-oscuro .card {
   background: #2c2c2c;
@@ -436,25 +442,25 @@ body.tema-oscuro .card p {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   cursor: pointer;
 }
+
+/* Unificada: Modal de preferencias */
 #seccion-preferencias {
   position: fixed;
   top: 50%;
   left: 50%;
   z-index: 2000;
   transform: translate(-50%, -50%);
-  background: #f9f9f9;
-  padding: 36px 28px;
-  border-radius: 16px;
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.2),
-    0 5px 15px rgba(0, 0, 0, 0.1);
-  min-width: 360px;
+  background: #fff;
+  padding: 32px 24px 24px 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  min-width: 320px;
   max-width: 90vw;
   max-height: 90vh;
   overflow-y: auto;
-  display: none;
-  animation: fadeInModal 0.3s ease-out;
+  display: none; /* Se muestra con JS */
   font-family: 'Segoe UI', sans-serif;
+  animation: fadeInModal 0.3s ease-out;
 }
 
 @keyframes fadeInModal {

@@ -1,0 +1,15 @@
+{
+    "name": "hpelite-book840g4/proyecto-semestral",
+    "autoload": {
+        "psr-4": {
+            "HpeliteBook840g4\\ProyectoSemestral\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "jassiel",
+            "email": "einer.mosquera@utp.ac.pa"
+        }
+    ],
+    "require": {}
+}
