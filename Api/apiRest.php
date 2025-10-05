@@ -3,11 +3,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 header('Content-Type: application/json');
-include '../controladores/authController.php';
-include '../controladores/TMDBController.php';
-include '../controladores/PreferenciasController.php';
-include '../controladores/calificacionController.php';
-// include '../controladores/perfilController.php'; no usar ya no existe xd
+include_once '../controladores/authController.php';
+include_once '../controladores/TMDBController.php';
+include_once '../controladores/PreferenciasController.php';
+include_once '../controladores/calificacionController.php';
 
 
 
@@ -61,7 +60,7 @@ switch ($action) {
     foreach ($tmdb_contenido as $item) {
         // Ahora usamos id_tmdb en lugar de id
         $id_tmdb = $item['id_tmdb'] ?? null;
-        if (!$id_tmdb) continue;
+        if (!$id_tmdb) {continue;}
 
         if (isset($cache[$id_tmdb])) {
             // Si está en cache, usamos los datos locales
@@ -195,9 +194,9 @@ switch ($action) {
                 if ($estado === 'activo' && (is_null($titulo) || is_null($sinopsis) || is_null($imagen))) {
                     $datos_tmdb = (new TMDBController())->obtenerDatosTMDB($id_tmdb);
                     if ($datos_tmdb) {
-                        if (is_null($titulo))   $titulo = $datos_tmdb['titulo'];
-                        if (is_null($sinopsis)) $sinopsis = $datos_tmdb['sinopsis'];
-                        if (is_null($imagen))   $imagen = $datos_tmdb['imagen'];
+                        if (is_null($titulo)){   $titulo = $datos_tmdb['titulo'];}
+                        if (is_null($sinopsis)){ $sinopsis = $datos_tmdb['sinopsis'];}
+                        if (is_null($imagen))   {$imagen = $datos_tmdb['imagen'];}
     }
 }
 
@@ -245,9 +244,9 @@ echo $success ?
 
         // Si hay override, usarlo; si no, usar json_data
         $contenido = json_decode($row['json_data'], true);
-        if (!empty($row['override_titulo'])) $contenido['titulo'] = $row['override_titulo'];
-        if (!empty($row['override_sinopsis'])) $contenido['sinopsis'] = $row['override_sinopsis'];
-        if (!empty($row['override_imagen'])) $contenido['imagen'] = $row['override_imagen'];
+        if (!empty($row['override_titulo'])) {$contenido['titulo'] = $row['override_titulo'];}
+        if (!empty($row['override_sinopsis'])){$contenido['sinopsis'] = $row['override_sinopsis'];}
+        if (!empty($row['override_imagen'])) {$contenido['imagen'] = $row['override_imagen'];}
 
         echo json_encode([
             'status' => 'override',
@@ -341,25 +340,28 @@ echo $success ?
         $cache = [];
     }
     foreach ($resultados as $movie) {
+        define('FECHA_NO_DISPONIBLE', 'Fecha no disponible');
+        define('ETIQUETA_LANZAMIENTO', 'Fecha de lanzamiento');
+        define('SIN_TITULO','Sin titulo');
         $id = $movie['id_tmdb'];  // Cambiado aquí
         if (isset($cache[$id])) {
             $row = $cache[$id];
-            if (isset($row['estado']) && $row['estado'] === 'inactivo') continue;
+            if (isset($row['estado']) && $row['estado'] === 'inactivo'){continue;}
             $contenido = json_decode($row['json_data'], true);
             $peliculas[] = [
-                'titulo' => $row['override_titulo'] ?: ($contenido['titulo'] ?? $movie['titulo'] ?? 'Sin título'),
+                'titulo' => $row['override_titulo'] ?: ($contenido['titulo'] ?? $movie['titulo'] ?? SIN_TITULO),
                 'sinopsis' => $row['override_sinopsis'] ?: ($contenido['sinopsis'] ?? $movie['sinopsis'] ?? ''),
                 'imagen' => $row['override_imagen'] ?: ($contenido['imagen'] ?? $movie['imagen']),
                 'calificacion' => $movie['calificacion'] ?? 'N/A',
-                'fecha_lanzamiento' => $movie['fecha_lanzamiento'] ?? 'Fecha no disponible'
+                ETIQUETA_LANZMIENTO => $movie[ETIQUETA_LANZMIENTO] ?? FECHA_NO_DISPONIBLE
             ];
         } else {
             $peliculas[] = [
-                'titulo' => $movie['titulo'] ?? 'Sin título',
+                'titulo' => $movie['titulo'] ?? SIN_TITULO,
                 'sinopsis' => $movie['sinopsis'] ?? '',
                 'imagen' => $movie['imagen'] ?? null,
                 'calificacion' => $movie['calificacion'] ?? 'N/A',
-                'fecha_lanzamiento' => $movie['fecha_lanzamiento'] ?? 'Fecha no disponible'
+                ETIQUETA_LANZMIENTO => $movie[ETIQUETA_LANZMIENTO] ?? FECHA_NO_DISPONIBLE
             ];
         }
     }
@@ -388,15 +390,15 @@ case 'nuevos':
         $id = $movie['id_tmdb'];
         if (isset($cache[$id])) {
             $row = $cache[$id];
-            if (isset($row['estado']) && $row['estado'] === 'inactivo') continue;
+            if (isset($row['estado']) && $row['estado'] === 'inactivo') {continue;}
             $contenido = json_decode($row['json_data'], true);
             $peliculas[] = [
                 'id_tmdb' => $id,
-                'titulo' => $row['override_titulo'] ?: ($contenido['titulo'] ?? $movie['titulo'] ?? 'Sin título'),
+                'titulo' => $row['override_titulo'] ?: ($contenido['titulo'] ?? $movie['titulo'] ?? SIN_TITULO),
                 'sinopsis' => $row['override_sinopsis'] ?: ($contenido['sinopsis'] ?? $movie['sinopsis'] ?? ''),
                 'imagen' => $row['override_imagen'] ?: ($contenido['imagen'] ?? $movie['imagen']),
                 'calificacion' => $movie['calificacion'] ?? 'N/A',
-                'fecha_lanzamiento' => $movie['fecha_lanzamiento'] ?? 'Fecha no disponible'
+                ETIQUETA_LANZMIENTO => $movie[ETIQUETA_LANZMIENTO] ?? 'Fecha no disponible'
             ];
         } else {
             $peliculas[] = $movie; // Ya viene formateado desde el controller
@@ -482,4 +484,3 @@ default:
 
 
 }
-?>
