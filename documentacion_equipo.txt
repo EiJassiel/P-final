@@ -1,0 +1,105 @@
+
+
+
+# Documentación para el equipo
+
+## Problemas detectados (Eric)
+
+Durante el desarrollo de la web de reseñas de cine, hemos enfrentado varios retos
+que nos han ayudado a aprender y mejorar como equipo. A continuación, se detallan
+los principales problemas y cómo nos han impactado:
+
+- **Validación insuficiente:**
+	Al principio, la validación de los datos se hacía únicamente en el front-end.
+	Esto significa que si un usuario modificaba los datos antes de enviarlos, el
+	servidor los aceptaba sin verificar. Esta práctica puede poner en riesgo la
+	seguridad de la aplicación y la calidad de los datos almacenados. Aprendimos
+	que la validación en el back-end es esencial para proteger la información y
+	evitar posibles vulnerabilidades.
+
+- **Errores y advertencias de SonarQube:**
+	Al integrar SonarQube Cloud y SonarLint en nuestro flujo de trabajo,
+	descubrimos varios errores y advertencias en el código. Estos iban desde
+	problemas de formato y estilo hasta cuestiones de seguridad y eficiencia.
+	Algunos errores eran simples, como variables no utilizadas, pero otros
+	requerían cambios más profundos en la lógica del programa. El proceso de
+	corrección nos ayudó a entender mejor las buenas prácticas de desarrollo y a
+	escribir código más limpio y seguro.
+
+- **Configuración del linter:**
+	Aunque el linter es una herramienta muy útil para mantener la calidad del
+	código, notamos que su configuración por defecto generaba demasiadas
+	advertencias, algunas de ellas poco relevantes o incluso innecesarias. Esto
+	puede distraer y hacer perder tiempo al equipo. Por eso, consideramos
+	importante ajustar la configuración del linter para que se adapte mejor a las
+	necesidades del proyecto y nos ayude a enfocarnos en los problemas realmente
+	importantes.
+
+- **Integración de metodologías TSP y PSP:**
+	Decidimos incorporar las metodologías TSP (Team Software Process) y PSP
+	(Personal Software Process) para mejorar la organización y el control del
+	trabajo. Al principio fue complicado adaptarnos, ya que implicaba documentar
+	más y seguir procesos más estrictos, pero con el tiempo notamos que la calidad
+	del trabajo y la colaboración mejoraron. Ahora tenemos una visión más clara de
+	los avances y los problemas, lo que nos permite tomar mejores decisiones.
+
+- **Gestión del tiempo y avances:**
+	En ocasiones, mostrar varios avances a la vez para cumplir con las
+	expectativas y mantener el ritmo del proyecto nos generó presión. Sin embargo,
+	esto también nos motivó a organizarnos mejor y a trabajar de manera más
+	eficiente.
+
+## Qué haremos a continuación (Nadesh)
+
+Pensando en el futuro y en cómo podemos seguir mejorando el proyecto, hemos
+definido varias acciones y objetivos para el equipo:
+
+- **Mejorar la validación de datos:**
+	Vamos a implementar validación tanto en el front-end como en el back-end. Esto
+	significa que los datos serán revisados antes de ser procesados o almacenados,
+	lo que aumentará la seguridad y la confiabilidad de la aplicación. Además,
+	documentaremos los criterios de validación para que todos los miembros del
+	equipo los conozcan y los apliquen correctamente.
+
+- **Optimizar el análisis de código:**
+	Continuaremos utilizando SonarLint y SonarQube para detectar errores en tiempo
+	real y realizar análisis más detallados. Ajustaremos la configuración del
+	linter para evitar advertencias innecesarias y centrarnos en los problemas que
+	realmente afectan la calidad y seguridad del código. También planeamos
+	realizar revisiones de código periódicas entre los miembros del equipo para
+	compartir conocimientos y detectar posibles mejoras.
+
+- **Desarrollar nuevas funcionalidades:**
+	Queremos que la aplicación sea cada vez más útil y atractiva para los usuarios.
+	Por eso, planeamos agregar nuevas características, como recomendaciones
+	personalizadas, integración con redes sociales y mejoras en la interfaz de
+	usuario. Cada nueva funcionalidad será probada y documentada para asegurar su
+	correcto funcionamiento.
+
+- **Mantener la organización y la colaboración:**
+	Seguiremos aplicando las metodologías TSP y PSP para mantener el ritmo y la
+	calidad del trabajo. Esto incluye la planificación de tareas, el seguimiento
+	de avances y la documentación de problemas y soluciones. Fomentaremos la
+	comunicación abierta y el trabajo en equipo para que todos los miembros puedan
+	aportar ideas y resolver dudas.
+
+- **Realizar pruebas más limpias y exhaustivas:**
+	Nos proponemos mejorar la calidad de las pruebas, haciendo que sean más
+	organizadas y cubran todos los casos posibles. Esto ayudará a reducir la
+	cantidad de errores y a asegurar que la aplicación sea robusta y confiable.
+	Además, documentaremos los resultados de las pruebas para que sirvan de
+	referencia en futuras mejoras.
+
+- **Ajustar la configuración de herramientas:**
+	Consideramos necesario revisar y ajustar la configuración de SonarLint y otras
+	herramientas de análisis para que se adapten mejor a nuestro proyecto. Esto
+	nos permitirá obtener resultados más fiables y mantener el código más limpio,
+	evitando advertencias o formateos innecesarios.
+
+---
+
+Este documento está pensado para que todos los miembros del equipo tengan claro
+cuáles son los problemas que hemos enfrentado y qué acciones vamos a tomar para
+solucionarlos y mejorar el proyecto. Si tienes dudas, sugerencias o quieres
+aportar ideas, no dudes en compartirlas. La colaboración y el aprendizaje
+continuo son clave para el éxito de nuestro trabajo.

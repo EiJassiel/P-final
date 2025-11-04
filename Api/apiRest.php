@@ -11,14 +11,15 @@ include_once '../controladores/calificacionController.php';
 
 
 
-try {
-    $conexion = new PDO('mysql:host=localhost;dbname=watchitodb;charset=utf8', 'root', '');
-    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    error_log('PDO ERROR: ' . $e->getMessage());
-    echo json_encode(['status' => 'error', 'msg' => 'Error de conexión PDO: ' . $e->getMessage()]);
+// Reutilizar la configuración centralizada en config/db.php
+require_once __DIR__ . '/../config/db.php';
+// `config/db.php` crea la variable `$PDO` o termina la ejecución en caso de error.
+if (!isset($PDO) || !$PDO instanceof PDO) {
+    error_log('PDO ERROR: no se pudo inicializar $PDO desde config/db.php');
+    echo json_encode(['status' => 'error', 'msg' => 'Error de conexión PDO: configuración inválida']);
     exit;
 }
+$conexion = $PDO;
 
 
 $auth = new authController($conexion);
