@@ -1,0 +1,111 @@
+Proyecto: CineApp — Estructura de archivos (generado automáticamente)
+
+Raíz:
+
+- .git/
+  - COMMIT_EDITMSG
+  - config
+  - description
+  - FETCH_HEAD
+  - HEAD
+  - hooks/
+  - index
+  - info/
+  - logs/
+  - objects/
+  - ORIG_HEAD
+  - refs/
+- .gitignore
+- .htaccess
+- .vscode/
+  - launch.json
+  - settings.json
+- Api/
+  - apiRest.php
+- assets/
+  - admin.js
+  - auth.css
+  - cambiarTema.js
+  - estilos.css
+  - img/
+    - banner.png
+    - delete.png
+    - descarga.jpg
+    - favicon.png
+    - genero_accion.jpg
+    - genero_cienciaficcion.jpg
+    - genero_comedia.jpg
+    - genero_drama.jpg
+    - genero_fantasia.jpg
+    - genero_terror.jpg
+    - noimg.png
+    - sys64mod/
+      - cas1.mp3
+      - cas2.mp3
+      - castigo.gif
+      - catswing.mp3
+      - delete.gif
+      - explosion.gif
+      - explosion.mp3
+      - GETOUT.png
+  - lloginscript.js
+  - perfil.js
+  - preferencias.js
+  - script.js
+- composer.json
+- composer.lock
+- config/
+  - db.php
+- controladores/
+  - authController.php
+  - calificacionController.php
+  - controladorCache.php
+  - preferenciasController.php
+  - TemaController.php
+  - TMDBController.php
+- docker-compose.yml
+- Dockerfile
+- documentacion_equipo.txt
+- estilos/
+  - admin.css
+  - estilos.css
+- FIXES.md
+- index.php
+- logout.php
+- models/
+  - generos.json
+- README_IMPORT_SQL.md
+- sql/
+  - watchitodb (3).sql
+- src/  (vacía)
+- url.php
+- vendor/
+  - autoload.php
+  - composer/
+    - autoload_classmap.php
+    - autoload_namespaces.php
+    - autoload_psr4.php
+    - autoload_real.php
+    - autoload_static.php
+    - ClassLoader.php
+    - installed.json
+    - installed.php
+    - InstalledVersions.php
+    - LICENSE
+- vistas/
+  - castigo.php
+  - dasboardAdmin.php
+  - footer.php
+  - header.php
+  - home.php
+  - login.php
+  - perfil.php
+  - setSession.php
+  - todasPopulares.php
+- vistasValidacion/
+  - register.html
+- WebServices/
+  - generos.json
+
+Notas:
+- Este archivo solo lista nombres de carpetas y archivos, no incluye su contenido.

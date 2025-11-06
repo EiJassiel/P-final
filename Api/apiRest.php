@@ -10,6 +10,7 @@ include_once '../controladores/calificacionController.php';
 
 
 
+/// SE MEJORA ESTE FRMATO DE API PARALOGRAR UNA MAYOR Y MEJOR INTEGRACION CON LAS BUENAS PRACTICAS DE PROGRAMACION
 
 // Reutilizar la configuración centralizada en config/db.php
 require_once __DIR__ . '/../config/db.php';
